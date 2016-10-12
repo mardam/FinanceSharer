@@ -12,6 +12,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.markusdamm.financesharer.utils.Strings;
+
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String item = listView.getItemAtPosition(position).toString();
                 Intent intent = new Intent(view.getContext(), SingleFinance.class);
-                intent.putExtra("singleFinanceName", item);
+                intent.putExtra(Strings.SINGLE_FINANCE_INTENT, item);
                 startActivity(intent);
             }
         });
